@@ -1,0 +1,24 @@
+.form__group > label {
+  display: block;
+  border: solid 2px green;
+  width: 200px;
+  height: 40px;
+  margin-top: 10px;
+  color: green;
+  text-align: center;
+  line-height: 40px;
+}
+
+.form__group > input[type='checkbox'] {
+  display: none;
+}
+
+.form__group > input:checked + label:before {
+  content: ' ';
+}
+
+.form__group > input:checked + label {
+  border: solid 2px purple;
+  color: white;
+  background: purple;
+}
