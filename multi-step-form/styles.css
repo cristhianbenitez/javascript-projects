@@ -1,3 +1,11 @@
+.form__card {
+  display: none;
+}
+
+.form__card.active {
+  display: block;
+}
+
 .form__group > label {
   display: block;
   border: solid 2px green;

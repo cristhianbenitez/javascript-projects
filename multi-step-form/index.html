@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form action="" class="form">
-      <div data-step class="form__card">
+    <form class="form" data-multi-step>
+      <div data-step class="form__card active">
         <label>
           Name
           <input
@@ -27,7 +27,7 @@
             placeholder="example@gmail.com"
         /></label>
 
-        <button type="submit" class="form__button" data-next>Continue</button>
+        <button type="button" class="form__button" data-next>Continue</button>
       </div>
 
       <div data-step class="form__card">
@@ -44,18 +44,16 @@
           <label for="graphic-design"> Graphic Design </label>
         </div>
 
-        <button type="submit" class="form__button" data-next>Continue</button>
+        <button type="button" class="form__button" data-next>Continue</button>
       </div>
 
       <div class="form__card">
         <h2>Summary</h2>
         <p>Name</p>
-        <button type="submit" class="form__button" data-next>Continue</button>
+        <button type="button" class="form__button" data-next>Continue</button>
       </div>
     </form>
 
-    <script src="script.js" defer></script>
-
-    <style></style>
+    <script src="index.js" defer></script>
   </body>
 </html>
