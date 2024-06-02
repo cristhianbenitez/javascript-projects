@@ -103,3 +103,7 @@ const stepTrackerUpdate = () => {
     }
   });
 };
+
+document.querySelector('[data-confirm]').addEventListener('click', () => {
+  alert('✅ Success');
+});
