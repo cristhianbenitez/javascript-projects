@@ -7,52 +7,74 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form class="form" data-multi-step>
-      <div data-step class="form__card active">
-        <label>
-          Name
-          <input
-            type="text"
-            name="name"
-            id="name"
-            class="form__input"
-            placeholder="enter your name"
-        /></label>
-        <label
-          >Email<input
-            type="text"
-            name="email"
-            id="email"
-            class="form__input"
-            placeholder="example@gmail.com"
-        /></label>
-
-        <button type="button" class="form__button" data-next>Continue</button>
-      </div>
-
-      <div data-step class="form__card">
-        <div class="form__group">
-          <input class="form__input" id="software-dev" type="checkbox" />
-          <label for="software-dev"> Software Development </label>
-        </div>
-        <div class="form__group">
-          <input class="form__input" id="user-exp" type="checkbox" />
-          <label for="user-exp"> User Experience </label>
-        </div>
-        <div class="form__group">
-          <input class="form__input" id="graphic-design" type="checkbox" />
-          <label for="graphic-design"> Graphic Design </label>
+    <img class="bg-image-1" src="./blur-radial.svg" alt="" />
+    <img class="bg-image-2" src="./blur-radial.svg" alt="" />
+    <div class="container">
+      <form class="form" data-multi-step>
+        <div data-step class="form__card active form__first-card">
+          <h3 class="form__card__title">Register</h3>
+          <div class="form__group">
+            <label for="name">Name</label>
+            <input
+              required
+              type="text"
+              name="name"
+              id="name"
+              placeholder="enter your name"
+            />
+          </div>
+          <div class="form__group">
+            <label for="email">Email</label>
+            <input
+              required
+              type="email"
+              name="email"
+              id="email"
+              placeholder="example@gmail.com"
+            />
+          </div>
+          <button type="button" class="form__button" data-next>Continue</button>
         </div>
 
-        <button type="button" class="form__button" data-next>Continue</button>
-      </div>
+        <div data-step class="form__card form__second-card">
+          <h3 class="form__card__title">Which topics are you interested in?</h3>
+          <div class="form__group">
+            <input required id="software-dev" type="checkbox" />
+            <label for="software-dev"> Software Development </label>
+          </div>
+          <div class="form__group">
+            <input required id="user-exp" type="checkbox" />
+            <label for="user-exp"> User Experience </label>
+          </div>
+          <div class="form__group">
+            <input required id="graphic-design" type="checkbox" />
+            <label for="graphic-design"> Graphic Design </label>
+          </div>
 
-      <div class="form__card">
-        <h2>Summary</h2>
-        <p>Name</p>
-        <button type="button" class="form__button" data-next>Continue</button>
+          <button type="button" class="form__button" data-next>Continue</button>
+        </div>
+
+        <div class="form__card form__third-card" data-step>
+          <div class="form__summary">
+            <h3 class="form__card__title">Summary</h3>
+            <p>Name: <span id="summary-name"></span></p>
+            <p>Email: <span id="summary-email"></span></p>
+            <p>Topics:</p>
+            <ul id="summary-topics"></ul>
+          </div>
+          <button type="button" class="form__button">Confirm</button>
+        </div>
+      </form>
+
+      <div class="step-tracker">
+        <p>Step <span id="current-step">1</span> of 3</p>
+        <div class="steps" data-step-tracker>
+          <div class="step active"></div>
+          <div class="step"></div>
+          <div class="step"></div>
+        </div>
       </div>
-    </form>
+    </div>
 
     <script src="index.js" defer></script>
   </body>
