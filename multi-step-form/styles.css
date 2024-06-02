@@ -85,16 +85,18 @@ body {
 }
 
 .form {
+  margin-top: 2.5rem;
   background-color: var(--clr-light-black);
   padding: 2.5rem;
   border-radius: 1rem;
   margin-bottom: 1.5rem;
+  border: 1px solid var(--clr-grey);
 }
 
 .form__card {
   display: none;
   flex-direction: column;
-  width: 400px;
+  width: 360px;
 }
 
 .form__card.active {
@@ -131,6 +133,9 @@ body {
   color: var(--clr-white);
   margin-bottom: 1.5rem;
 }
+.form__first-card .form__group:nth-child(3) input {
+  margin-bottom: 0;
+}
 
 .form__first-card input:focus {
   outline: none;
@@ -142,7 +147,7 @@ body {
   color: var(--clr-white);
   border: none;
   border-radius: 2rem;
-  padding: 1rem 3rem;
+  padding: 0.75rem 2.5rem;
   width: 100%;
   cursor: pointer;
   font-size: var(--fs-tab-text);
