@@ -48,40 +48,84 @@ html {
   height: 100%;
   background: var(--clr-black);
   color: white;
+  font-family: var(--ff-text);
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100%;
-  width: 100%;
   max-width: 1280px;
+  margin: 0 auto;
 }
 
 .quote-container {
-  background: var(--clr-grey);
-  width: 660px;
+  margin-top: 15rem;
+  background-image: url('./bg-image-random-quote.svg');
+  background-size: cover;
+  background-color: var(--clr-light-dark);
+  width: 540px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 1rem;
 }
 
 .quote-author {
+  font-size: var(--fs-medium);
+  font-weight: 600;
+  text-align: center;
+
+  margin-bottom: 0.75rem;
 }
 
 .quote-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: var(--fs-small);
+  color: var(--clr-purple);
+  margin-bottom: 1.5rem;
+}
+
+.quote-tags .tag {
+  border: 1px solid var(--clr-purple);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  text-transform: capitalize;
 }
 
 .quote-box {
+  text-align: center;
 }
 
 .quote-text {
+  font-size: var(--fs-large);
+  color: var(--clr-light-grey);
+  line-height: 1.5;
 }
 
 .buttons {
   display: flex;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: var(--clr-light-dark) 2px solid;
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn img {
+  width: 32px;
 }
 
 .new-quote {
+  border-right: var(--clr-light-dark) 2px solid;
 }
 
 .copy-quote {
