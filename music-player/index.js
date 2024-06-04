@@ -3,14 +3,22 @@ const playPauseElement = document.getElementById('playpause-track');
 const nextTrackElement = document.getElementById('next-track');
 const musicPlayer = document.getElementById('music-player');
 const audioElement = document.getElementById('songs');
-
+const seekbar = document.getElementById('seekbar');
+const seekbarProgress = document.getElementById('seekbar-progress');
 const playButton = document.getElementById('play-button');
 const pauseButton = document.getElementById('pause-button');
+const trackTime = document.getElementById('time');
+const trackCurrentTime = document.getElementById('current');
+const trackDuration = document.getElementById('duration');
+const trackArt = document.getElementById('track-art');
 
 const tracks = [
   'assets/lost-in-city-lights-145038.mp3',
   'assets/forest-lullaby-110624.mp3'
 ];
+
+const images = ['assets/cover-1.png', 'assets/cover-2.png'];
+
 let currentTrackIndex = 0;
 
 const loadSong = (song) => {
@@ -37,13 +45,11 @@ const pauseSong = () => {
 
 playPauseElement.addEventListener('click', () => {
   let isPlaying = musicPlayer.classList.contains('play');
-  console.log(isPlaying);
   if (isPlaying) {
     pauseSong();
   } else {
     playSong();
   }
-  return;
 });
 
 prevTrackElement.addEventListener('click', () => {
@@ -57,7 +63,8 @@ prevTrackElement.addEventListener('click', () => {
 
 nextTrackElement.addEventListener('click', () => {
   currentTrackIndex++;
-  if (currentTrackIndex < tracks.length - 1) {
+  // If tracks are over, start from the beginning
+  if (currentTrackIndex > tracks.length - 1) {
     currentTrackIndex = 0;
   }
   loadSong(currentTrackIndex);
@@ -67,8 +74,22 @@ nextTrackElement.addEventListener('click', () => {
 audioElement.addEventListener('timeupdate', (e) => {
   const { currentTime, duration } = e.target;
 
-  const progressPercent =
-    (audioElement.currentTime / audioElement.duration) * 100;
+  trackCurrentTime.innerHTML = formatTime(currentTime);
+  if (!duration) {
+    trackDuration.innerHTML = '0:00';
+  } else {
+    trackDuration.innerHTML = formatTime(duration);
+  }
 
-  document.getElementById('seek-slider').value = `${progressPercent}`;
+  const progressPercent = (currentTime / duration) * 100;
+  seekbarProgress.style.width = `${progressPercent}%`;
 });
+
+seekbar.addEventListener('click', (e) => {
+  const newTime = (e.offsetX / seekbar.offsetWidth) * audioElement.duration;
+  audioElement.currentTime = newTime;
+});
+
+const formatTime = (time) => {
+  return Math.floor(time / 60) + ':' + ('0' + Math.floor(time % 60)).slice(-2);
+};

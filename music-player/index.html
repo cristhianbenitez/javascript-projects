@@ -11,7 +11,7 @@
       <div class="music-player" id="music-player">
         <div class="details">
           <div class="track-art">
-            <img src="assets/cover-1.png" alt="" />
+            <img id="track-art" src="assets/cover-1.png" alt="" />
           </div>
           <div class="track-name" id="track-name">Lost in the city lights</div>
           <div class="track-artist" id="track-artist">Cosmo Sheldrake</div>
@@ -19,17 +19,16 @@
 
         <audio id="songs" src="./assets/lost-in-city-lights-145038.mp3"></audio>
 
-        <div class="seek-bar">
-          <input
-            type="range"
-            min="1"
-            max="100"
-            value="0"
-            id="seek-slider"
-            class="seek_slider"
-          />
-        </div>
+        <div class="seek-bar-container">
+          <div class="seek-bar__time" id="time">
+            <span class="seek-bar__current" id="current">0:00</span>
+            <span class="seek-bar__duration" id="duration">0:00</span>
+          </div>
 
+          <div class="seek-bar" id="seekbar">
+            <div class="seek-bar__progress" id="seekbar-progress"></div>
+          </div>
+        </div>
         <div class="buttons">
           <div class="prev-track" id="prev-track">
             <img src="assets/Stop_and_play_fill-1.svg" alt="previous-track" />
