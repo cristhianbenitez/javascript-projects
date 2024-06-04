@@ -1,0 +1,114 @@
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ======================
+        Variables
+======================*/
+
+:root {
+  --ff-text: 'Inter', sans-serif;
+
+  --fs-name: 1rem;
+  --fs-author: 0.75rem;
+  --fs-small-text: 0.625rem;
+
+  --clr-fuchsia: #c93b76;
+  --clr-grey: #4d5562;
+  --clr-light-grey: #121826a6;
+  --clr-white: #e5e7eb;
+  --clr-black: #212936;
+}
+
+/* ======================
+        Styles
+======================*/
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  fonf-family: var(--ff-text);
+  background: url('./assets/bg.jpg');
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+}
+
+.player {
+}
+
+.details {
+}
+
+.track-art {
+}
+
+.track-name {
+  text-transform: capitalize;
+}
+
+.track-artist {
+}
+
+.seek-bar {
+  width: 100%;
+}
+.seek-bar input {
+  width: 100%;
+}
+
+.seek_slider {
+}
+
+.buttons {
+  display: flex;
+  color: white;
+  fill: white;
+}
+
+.buttons path {
+  fill: white;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.prev-track,
+.playpause-track,
+.next-track {
+  cursor: pointer;
+}
+.prev-track {
+}
+
+.playpause-track {
+}
+
+.next-track {
+}

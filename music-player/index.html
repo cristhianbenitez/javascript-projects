@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player" id="music-player">
+        <div class="details">
+          <div class="track-art">
+            <img src="assets/cover-1.png" alt="" />
+          </div>
+          <div class="track-name" id="track-name">Lost in the city lights</div>
+          <div class="track-artist" id="track-artist">Cosmo Sheldrake</div>
+        </div>
+
+        <audio id="songs" src="./assets/lost-in-city-lights-145038.mp3"></audio>
+
+        <div class="seek-bar">
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="0"
+            id="seek-slider"
+            class="seek_slider"
+          />
+        </div>
+
+        <div class="buttons">
+          <div class="prev-track" id="prev-track">
+            <img src="assets/Stop_and_play_fill-1.svg" alt="previous-track" />
+          </div>
+          <div class="playpause-track" id="playpause-track">
+            <img
+              id="play-button"
+              src="assets/Play_fill.svg"
+              alt="playpause-track"
+              class="play-button active"
+            />
+            <img
+              id="pause-button"
+              class="pause-button hidden"
+              src="assets/Stop_fill.svg"
+              alt="playpause-track"
+            />
+          </div>
+          <div class="next-track" id="next-track">
+            <img src="assets/Stop_and_play_fill_reverse.svg" alt="next-track" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="./index.js" defer></script>
+</html>
