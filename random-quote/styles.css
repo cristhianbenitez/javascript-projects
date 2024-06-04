@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ======================
+        Variables
+======================*/
+
+:root {
+  --ff-text: 'Outfit', sans-serif;
+
+  --fs-large: 1.5rem;
+  --fs-medium: 1rem;
+  --fs-small: 0.625rem;
+
+  --clr-purple: #6466e9;
+  --clr-light-grey: #97a3b6;
+  --clr-grey: #4a5567;
+  --clr-light-dark: #20293a;
+  --clr-black: #111729;
+}
+
+/* ======================
+        Styles
+======================*/
+
+body,
+html {
+  height: 100%;
+  background: var(--clr-black);
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1280px;
+}
+
+.quote-container {
+  background: var(--clr-grey);
+  width: 660px;
+}
+
+.quote-author {
+}
+
+.quote-tags {
+}
+
+.quote-box {
+}
+
+.quote-text {
+}
+
+.buttons {
+  display: flex;
+}
+
+.new-quote {
+}
+
+.copy-quote {
+}
