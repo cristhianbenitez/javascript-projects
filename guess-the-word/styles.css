@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ======================
+        Variables
+======================*/
+
+:root {
+  --ff-text: 'Outfit', sans-serif;
+
+  --fs-large: 2rem;
+  --fs-medium: 1.25rem;
+  --fs-small: 0.75rem;
+  --fs-btn: 0.875rem;
+
+  --clr-purple: #7429c6;
+  --clr-dark-purple: #672171;
+  --clr-pink: #c951e7;
+  --clr-grey: #4a5567;
+  --clr-light-grey: #97a3b6;
+  --clr-black: #030616;
+  --clr-white: #f2f5f9;
+}
+
+/* ======================
+        Styles
+======================*/
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-text);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game {
+  width: 320px;
+  padding: 2.5rem;
+  background: var(--clr-black);
+  border-radius: 1rem;
+  color: var(--clr-white);
+}
+
+.game-title {
+  background-image: linear-gradient(
+    to right,
+    var(--clr-purple),
+    var(--clr-pink)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+}
+
+.game__word-container {
+  background-color: var(--clr-grey);
+  padding: 1rem 2rem;
+  border-radius: 3px;
+  margin-bottom: 2rem;
+}
+
+.game__trackers {
+}
+
+.game__trackers__tries {
+}
+
+.game__trackers__mistakes {
+}
+
+.game__input-container {
+}
+
+.game__input__letter {
+  width: 24px;
+  height: 24px;
+}
+
+.game__buttons {
+}
+
+.game__button--random {
+}
+
+.game__button--reset {
+}
+
+.correct {
+  background: green;
+  color: black;
+}
+.incorrect {
+  background: red;
+  color: black;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guess the word</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="game">
+        <h2 class="game-title">Word Scramble</h2>
+        <div class="game__word-container" id="word"></div>
+        <div class="game__trackers">
+          <div class="game__trackers__tries">
+            Tries (<span id="tries">0</span>/5):
+            <div class="game__trackers__tries__dots">
+              <div class="game__trackers__tries__dot"></div>
+              <div class="game__trackers__tries__dot"></div>
+              <div class="game__trackers__tries__dot"></div>
+              <div class="game__trackers__tries__dot"></div>
+              <div class="game__trackers__tries__dot"></div>
+            </div>
+          </div>
+          <div class="game__trackers__mistakes">
+            Mistakes:<span id="mistakes">0</span>
+          </div>
+        </div>
+        <div class="game__input-container"></div>
+        <div class="game__buttons">
+          <button type="button" class="game__button--random">Random</button>
+          <button type="button" class="game__button--reset">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js" defer></script>
+  </body>
+</html>
