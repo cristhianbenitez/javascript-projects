@@ -123,6 +123,7 @@ function checkLetters(letterInputs) {
   if (inputString === selectedWord) {
     console.log('Match found!');
     letterInputs.forEach((input) => (input.disabled = true));
+    alert('You won!');
     // You can add your success logic here
   } else if (inputString.length === selectedWord.length) {
     console.log('No match. Try again.');
