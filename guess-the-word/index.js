@@ -155,6 +155,7 @@ async function resetGame() {
   mistakes.textContent = wrongLetters;
   tries.textContent = attempts;
   attemptsEl.forEach((element) => element.classList.remove('filled'));
+  inputContainer.classList.remove('disabled');
   guessedLetters = [];
   isGameWon = false;
   isGameLost = false;
