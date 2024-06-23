@@ -53,21 +53,28 @@ body {
 
 body {
   font-family: var(--ff-text);
+  background: var(--clr-pink);
+  background-image: url(./bg-guess-the-word.png);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .container {
-  height: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .game {
-  width: 320px;
-  padding: 2.5rem;
-  background: var(--clr-black);
+  width: 380px;
+  padding-inline: 1.625rem;
+  padding-block: 1.5rem 2.5rem;
+  background: rgb(27, 33, 50);
   border-radius: 1rem;
   color: var(--clr-white);
+
+  margin-top: 11.25rem;
 }
 
 .game-title {
@@ -80,6 +87,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .game__word-container {
@@ -87,39 +95,104 @@ body {
   padding: 1rem 2rem;
   border-radius: 3px;
   margin-bottom: 2rem;
+  font-size: var(--fs-large);
+  text-align: center;
+  letter-spacing: 15px;
+  color: var(--clr-light-grey);
 }
 
 .game__trackers {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 3.25rem;
+  font-size: var(--fs-small);
+  color: var(--clr-grey);
+  padding-inline: 2.5rem;
 }
 
 .game__trackers__tries {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game__trackers__tries__dots {
+  position: relative;
+  display: flex;
+  gap: 4px;
+}
+
+.game__trackers__tries__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--clr-grey);
+}
+
+.filled {
+  background-color: var(--clr-purple);
+}
+
+.disabled {
+  pointer-events: none;
 }
 
 .game__trackers__mistakes {
 }
 
 .game__input-container {
+  padding-inline: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  align-items: center;
+  margin-bottom: 3.5rem;
 }
 
 .game__input__letter {
-  width: 24px;
-  height: 24px;
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--clr-grey);
+  border-radius: 6px;
+  gap: 6px;
+  background: transparent;
+  color: var(--clr-white);
+  text-align: center;
+}
+
+.game__input__letter:focus {
+  outline: none;
+  border-color: var(--clr-purple);
+}
+
+.game__input__letter.correct {
+  border-color: var(--clr-purple);
+}
+
+.game__input__letter.incorrect {
+  border-color: rgb(178, 61, 61);
 }
 
 .game__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
 }
 
+.game__button--random,
+.game__button--reset {
+  padding: 0.5rem 1.75rem;
+  border-radius: 6px;
+  border: none;
+  font-size: var(--fs-btn);
+  color: var(--clr-white);
+  font-weight: 500;
+  background: var(--clr-pink);
+}
 .game__button--random {
 }
 
 .game__button--reset {
-}
-
-.correct {
-  background: green;
-  color: black;
-}
-.incorrect {
-  background: red;
-  color: black;
 }

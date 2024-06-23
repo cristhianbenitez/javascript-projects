@@ -5,16 +5,21 @@ const input = document.querySelector('.game__input');
 const resetBtn = document.querySelector('.game__button--reset');
 const randomBtn = document.querySelector('.game__button--random');
 const word = document.getElementById('word');
+const attemptsEl = document.querySelectorAll('.game__trackers__tries__dot');
+
+const mistakes = document.getElementById('mistakes');
+const tries = document.getElementById('tries');
 
 let selectedWord = '';
 let selectedWordLetters = '';
 let guessedLetters = [];
-let remainingGuesses = 5;
 let isGameWon = false;
 let isGameLost = false;
+let attempts = 0;
+let wrongLetters = '';
 
 async function getRandomWord() {
-  const api = 'https://random-word.ryanrk.com/api/en/word/random/?maxlength=8';
+  const api = 'https://random-word-api.vercel.app/api?words=1&length=6';
 
   try {
     const response = await fetch(api);
@@ -55,8 +60,14 @@ function checkIfLettersMatch(letter, index) {
     lettersInput[index].classList.add('correct');
   } else {
     guessedLetters[index] = letterValue;
-    console.log(guessedLetters);
+    wrongLetters = [...wrongLetters, letterValue];
+    mistakes.textContent = wrongLetters;
     lettersInput[index].classList.add('incorrect');
+
+    if (attempts < 5) {
+      attempts++;
+      attemptsEl[attempts - 1].classList.add('filled');
+    }
   }
 }
 
@@ -68,9 +79,16 @@ function setupEventListeners() {
       limitInputToOneChar(letter);
       checkIfLettersMatch(letter, index);
       const nextInput = letterInputs[index + 1];
+      tries.textContent = attempts;
+
+      if (attempts == 5) {
+        letter.disabled = true;
+        inputContainer.classList.add('disabled');
+      }
       if (nextInput) {
         nextInput.focus();
       }
+
       checkLetters(letterInputs);
     });
 
@@ -78,6 +96,9 @@ function setupEventListeners() {
       if (e.key === 'Backspace' && letter.value.length === 0) {
         const prevInput = letterInputs[index - 1];
         letter.classList.remove('incorrect', 'correct');
+        if (attempts == 5) {
+          letter.disabled = true;
+        }
         if (prevInput) {
           prevInput.classList.remove('incorrect', 'correct');
           prevInput.focus();
@@ -99,8 +120,6 @@ function checkLetters(letterInputs) {
     .map((input) => input.value)
     .join('');
 
-  console.log(selectedWord);
-  console.log(inputString);
   if (inputString === selectedWord) {
     console.log('Match found!');
     letterInputs.forEach((input) => (input.disabled = true));
@@ -113,6 +132,7 @@ function checkLetters(letterInputs) {
 
 async function initializeGame() {
   try {
+    resetGame();
     selectedWord = await getRandomWord();
     word.textContent = shuffleString(selectedWord);
     selectedWordLetters = selectedWord.split('');
@@ -128,10 +148,14 @@ async function resetGame() {
   letterInputs.forEach((input) => {
     input.value = '';
     input.disabled = false;
+    input.classList.remove('correct', 'incorrect');
   });
-
+  attempts = 0;
+  wrongLetters = '';
+  mistakes.textContent = wrongLetters;
+  tries.textContent = attempts;
+  attemptsEl.forEach((element) => element.classList.remove('filled'));
   guessedLetters = [];
-  remainingGuesses = 5;
   isGameWon = false;
   isGameLost = false;
 }
