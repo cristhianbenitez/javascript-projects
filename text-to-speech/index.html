@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Text to Speech</title>
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel="preload" href="script.js" as="script" />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -12,41 +15,43 @@
         <img src="./hero-image-text-to-speech.png" alt="hero image of a robot" />
       </section>
       <section class="speechbot">
-        <div class="speechbot__header">
-          <h1>Speechbot</h1>
-          <img src="./text-to-speech-logo.svg" alt="logo" />
+        <div class="speechbot__container">
+          <div class="speechbot__header">
+            <h1>Speechbot</h1>
+            <img src="./text-to-speech-logo.svg" alt="logo" />
+          </div>
+          <form action="submit" class="speechbot__form">
+            <div class="speechbot__form__group">
+              <textarea
+                type="text"
+                id="input"
+                placeholder="Enter your text"
+                class="speechbot__form__group__input"
+              ></textarea>
+              <small class="speechbot__form__group__small"
+                >Enter your text above and hit 'play.' You can choose a different voice by selecting an option from the
+                dropdown menu.</small
+              >
+            </div>
+            <div class="speechbot__form__group">
+              <h3>Settings</h3>
+              <div class="speechbot__form__group__select">
+                <label>Voice</label>
+                <div class="speechbot__form__group__select--custom">
+                  <select name="language" id="language-select"></select>
+                </div>
+                <div class="speechbot__form__group__select--custom">
+                  <select name="voices" id="voice-select"></select>
+                </div>
+              </div>
+              <div class="speechbot__form__group__select">
+                <label>Speed</label>
+                <div class="custom-options" id="rate-select"></div>
+              </div>
+            </div>
+            <button class="speechbot__form__button" id="btn" type="submit">Text to speech</button>
+          </form>
         </div>
-        <form action="submit" class="speechbot__form">
-          <div class="speechbot__form__group">
-            <textarea
-              type="text"
-              id="input"
-              placeholder="Enter your text"
-              class="speechbot__form__group__input"
-            ></textarea>
-            <small class="speechbot__form__group__small"
-              >Enter your text above and hit 'play.' You can choose a different voice by selecting an option from the
-              dropdown menu.</small
-            >
-          </div>
-          <div class="speechbot__form__group">
-            <h3>Settings</h3>
-            <div class="speechbot__form__group__select">
-              <label>Voice</label>
-              <div class="speechbot__form__group__select--custom">
-                <select name="language" id="language-select"></select>
-              </div>
-              <div class="speechbot__form__group__select--custom">
-                <select name="voices" id="voice-select"></select>
-              </div>
-            </div>
-            <div class="speechbot__form__group__select">
-              <label>Speed</label>
-              <div class="custom-options" id="rate-select"></div>
-            </div>
-          </div>
-          <button class="speechbot__form__button" id="btn" type="submit">Text to speech</button>
-        </form>
       </section>
     </main>
     <script src="script.js" defer></script>

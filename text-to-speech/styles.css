@@ -36,7 +36,7 @@ body {
 
 body {
   font-family: var(--ff-outfit);
-  background-color: #111729;
+  background-color: #1c1b43;
   color: #e3e8ef;
   -webkit-text-size-adjust: 100%; /* Safari on iOS */
 }
@@ -44,17 +44,15 @@ body {
 .container {
   display: flex;
   max-width: 1280px;
-  height: 100%;
   margin: 0 auto;
-  align-items: center;
-  justify-content: center;
 }
 
-.hero {
-  width: 50%;
-}
+.hero,
 .speechbot {
   width: 50%;
+}
+
+.speechbot__container {
   padding: 2rem;
 }
 
@@ -74,6 +72,9 @@ body {
 }
 
 @media (max-width: 768px) {
+  body {
+    align-items: start;
+  }
   .speechbot {
     width: 100%;
   }
