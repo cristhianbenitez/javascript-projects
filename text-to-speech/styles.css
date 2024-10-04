@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+:root {
+  --ff-outfit: 'Outfit', sans-serif;
+
+  --fs-heading: 2.5rem;
+  --fs-body: 1rem;
+  --fs-name: 1.25rem;
+}
+
+/* Add some styles */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: var(--ff-outfit);
+  background-color: #111729;
+  color: #e3e8ef;
+  -webkit-text-size-adjust: 100%; /* Safari on iOS */
+}
+
+.container {
+  display: flex;
+  max-width: 1280px;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero {
+  width: 50%;
+}
+.speechbot {
+  width: 50%;
+  padding: 2rem;
+}
+
+.speechbot__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+.speechbot__header h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+.speechbot__header img {
+  display: flex;
+  height: 1.25rem;
+}
+
+@media (max-width: 768px) {
+  .speechbot {
+    width: 100%;
+  }
+  .hero {
+    display: none;
+  }
+}
+
+.speechbot__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.speechbot__form__group {
+}
+.speechbot__form__group h3 {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+.speechbot__form__group__input {
+  width: 100%;
+  padding: 1.25rem;
+  border-radius: 12px;
+  border: none;
+  background: #1e2a52;
+  border: 2px solid #2e5b84;
+  height: 160px;
+  color: #e3e8ef;
+  margin-bottom: 0.5rem;
+  -webkit-appearance: none; /* Safari on iOS */
+}
+.speechbot__form__group__input::placeholder {
+  color: #677489;
+  font-size: 0.85rem;
+}
+
+.speechbot__form__group__input:focus {
+  outline: #6326a2;
+}
+.speechbot__form__group__small {
+  font-size: 0.75rem;
+  color: #677489;
+  line-height: 100%;
+}
+
+.speechbot__form__group__select {
+  display: flex;
+  align-items: center;
+  background: #1e2a52;
+  padding: 0.5rem 1.25rem;
+  border-radius: 12px;
+  width: fit-content;
+}
+.speechbot__form__group__select:nth-child(2) {
+  margin-bottom: 1rem;
+}
+.speechbot__form__group__select > label {
+  padding-right: 1.25rem;
+  border-right: 1px solid #677489;
+  color: #677489;
+}
+.speechbot__form__group__select--custom select {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #e3e8ef;
+  width: 70px;
+  padding: 5px;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-appearance: none; /* Safari on iOS */
+}
+
+.speechbot__form__group__select .custom-options {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding-inline: 0.5rem;
+}
+
+.speechbot__form__group__select .custom-options label {
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #ece9fc;
+  transition: border-color 0.3s;
+}
+
+.speechbot__form__group__select .custom-options input[type='radio'] {
+  display: none;
+}
+
+.speechbot__form__group__select .custom-options label:has(input[type='radio']:checked),
+.speechbot__form__group__select .custom-options label:hover,
+.speechbot__form__group__select .custom-options label:focus {
+  background-color: #111729;
+}
+
+.speechbot__form__button {
+  margin-top: 1.875rem;
+  padding: 1rem 0;
+  border-radius: 12px;
+  background: linear-gradient(to right, #6326a2, #263fa9);
+  border: none;
+  color: #ece9fc;
+  font-weight: 500;
+  -webkit-appearance: none; /* Safari on iOS */
+}
