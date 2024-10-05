@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <img src="./hero-image-movie-search.png" alt="background image" class="background-image" />
+    <main class="container">
+      <section class="search">
+        <h1><img src="./OMDb-logo.svg" alt="logo" class="logo" /></h1>
+        <form id="search-form" class="search-form">
+          <div class="search-form__input">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              id="search-btn"
+            >
+              <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
+              <path
+                d="M11 8C10.606 8 10.216 8.078 9.852 8.228C9.488 8.379 9.157 8.6 8.879 8.879C8.6 9.157 8.379 9.488 8.228 9.852C8.078 10.216 8 10.606 8 11"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+              <path d="M20 20L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            <input type="text" id="search" placeholder="Search movie" autocomplete="off" id="movie-name" required />
+          </div>
+        </form>
+      </section>
+      <section id="result" class="hidden"></section>
+    </main>
+
+    <script src="main.js" defer></script>
+  </body>
+</html>

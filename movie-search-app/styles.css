@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+/* Reset some default styles */
+body,
+h2,
+h3,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Add some styles */
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background: #111729;
+  color: #ffffff;
+  /* background-image: url('./hero-image-movie-search.png');
+  background-repeat: no-repeat;
+  background-size: 100%; */
+}
+
+.background-image {
+  width: 100%;
+  max-height: 334px;
+}
+
+.container {
+  max-width: 1280px;
+  /* padding: 0 6rem; */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.logo {
+  margin-bottom: 1.5rem;
+}
+
+.search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -11rem;
+}
+
+.search-form {
+  margin-bottom: 2.5rem;
+}
+
+.search-form__input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background-color: #20293a;
+  border-radius: 8px;
+  padding: 1.25rem 1.75rem;
+  width: 540px;
+  position: relative;
+  color: #97a3b6;
+}
+.search-form__input input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  color: currentColor;
+}
+.search-form__input input::placeholder {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.search-form__input:focus-within::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid #3662e3;
+  border-radius: 8px;
+}
+
+.movie {
+  display: flex;
+  padding: 1.5rem;
+  max-width: 820px;
+  border: 2px solid #20293a;
+  border-radius: 12px;
+  margin: 0 auto;
+  gap: 1.5rem;
+}
+
+.movie__img {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.movie__img img {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie__poster {
+}
+
+.movie__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.movie__title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.movie__genres {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.movie__genres__item {
+  color: #97a3b6;
+  background: #20293a;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+}
+
+.movie__plot {
+  color: #97a3b6;
+  line-height: 130%;
+  margin-bottom: 1.5rem;
+  max-width: 820px;
+}
+
+.movie__details {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie__details__item {
+  font-weight: 300;
+}
+
+.movie__details__item span {
+  color: #97a3b6;
+  font-weight: 400;
+}
+
+.movie__details__item small {
+  color: #97a3b6;
+}
